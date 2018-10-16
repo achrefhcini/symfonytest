@@ -1,0 +1,16 @@
+{% extends "@FOSUser/layout.html.twig" %}
+
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% block fos_user_content %}
+    <p>{{ 'registration.confirmed'|trans({'%username%': user.username}) }}</p>
+    {% if targetUrl %}
+    <p><a href="{{ targetUrl }}">{{ 'registration.back'|trans }}</a></p>
+    {% endif %}
+    <p>Voir vos relations</p>
+    <a href="/relation">Mes relations</a>
+    <a href="/profile/edit">Modifier mon profile</a>
+    <a href="/profile">Voir profile</a>
+
+
+{% endblock fos_user_content %}
